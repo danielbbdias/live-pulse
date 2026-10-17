@@ -1,0 +1,58 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f5f5f7;
+  color: #1d1d1f;
+}
+
+.container { max-width: 640px; margin: 0 auto; padding: 16px; }
+
+header { display: flex; justify-content: space-between; align-items: center; }
+nav a { margin-left: 12px; }
+
+.topo { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+
+button {
+  padding: 8px 12px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+}
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+input[type="text"], input:not([type]) {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+}
+
+.linha-opcao { display: flex; gap: 8px; }
+.acoes { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.lista, .opcoes, .resultados { list-style: none; padding: 0; }
+.lista li {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 8px; flex-wrap: wrap;
+  padding: 10px; margin-bottom: 8px;
+  background: #fff; border-radius: 8px;
+}
+.opcoes li { padding: 8px 0; }
+
+.estado { margin-left: 8px; padding: 2px 8px; border-radius: 10px; font-size: 12px; background: #ddd; }
+.estado.aberta { background: #c8f0d0; }
+.estado.fechada { background: #f0c8c8; }
+
+.caixa { margin-top: 16px; padding: 12px; background: #fff; border-radius: 8px; }
+
+.linha { display: flex; justify-content: space-between; }
+.barra { height: 10px; background: #e5e5ea; border-radius: 5px; margin: 4px 0 12px; }
+.barra-cheia { height: 100%; background: #4f7cff; border-radius: 5px; }
+
+.erro { color: #b00020; }
+.sucesso { color: #1b7a34; font-weight: 600; }
+.info { color: #666; font-size: 14px; }
