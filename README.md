@@ -18,7 +18,7 @@ python -m venv venv
 source venv/bin/activate
 
 pip install -r requirements.txt
-uvicorn main:app --reload
+uvicorn livepulse.main:app --reload
 ```
 
 A API fica em `http://localhost:8000` (documentação interativa em `http://localhost:8000/docs`). A base de dados `livepulse.db` é criada automaticamente no primeiro arranque.
