@@ -37,11 +37,11 @@ export default function Anfitriao() {
   }
 
   function removerOpcao(indice) {
-    if (opcoes.length > 2) setOpcoes(opcoes.filter((_, i) => i !== indice));
+    if (opcoes.length  q> 2) setOpcoes(opcoes.filter((_, i) => i !== indice));
   }
 
   async function criar(e) {
-    e.preventDefault(); // evita que o browser recarregue a página
+    e.preventDefault(); // evita que o browser recarregue a página  
     setErro("");
     try {
       await criarVotacao(pergunta, opcoes);
