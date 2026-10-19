@@ -16,6 +16,7 @@ python -m venv venv
 .\venv\Scripts\Activate.ps1
 # Linux/macOS:
 source venv/bin/activate
+Se o PowerShell bloquear o script de ativação, corre uma vez: `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`
 
 pip install -r requirements.txt
 uvicorn main:app --reload
@@ -35,6 +36,7 @@ npm run dev
 
 - Público: `http://localhost:5173/`
 - Anfitrião: `http://localhost:5173/host`
+Nota: o backend só aceita pedidos de `http://localhost:5173` (CORS). Se o Vite arrancar noutra porta, é preciso ajustar `allow_origins` em `main.py`.
 
 ## Níveis completados
 
@@ -76,6 +78,8 @@ Códigos usados: 201 (criado), 400 (dados inválidos), 403 (resultados ainda nã
 - **O voto único pode ser contornado**: apagar o `localStorage`, usar uma janela anónima ou outro browser gera um token novo. Impedir isto a sério exigiria autenticação.
 - **Sem autenticação no painel do anfitrião** (dispensada no enunciado): qualquer pessoa que conheça `/host` ou chame a API sem `publico=true` tem acesso de anfitrião.
 - `GET /votacoes/{id}` devolve também votações em rascunho: o frontend esconde-as, mas o backend não.
+- **O backend aceita qualquer transição de estado** (por exemplo, Fechada → Rascunho). Só o frontend mostra os botões pela ordem Rascunho → Aberta → Fechada.
+- **A ligação à base de dados não é fechada se um endpoint falhar a meio**, porque faltam blocos `try/finally`.
 
 ## O que melhoraria com mais tempo
 
